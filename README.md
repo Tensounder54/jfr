@@ -59,7 +59,7 @@ If you would like to contribute to the project then that's fantasic! We'd love t
 
 # Licence #
 
-You can find the licence for jfr in the [LICENCE](blob/master/LICENSE) file.
+You can find the licence for jfr in the [LICENCE](blob/LICENSE) file.
 
 The Java Freecycle Reader is licenced and distabuted under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html). [2]
 
