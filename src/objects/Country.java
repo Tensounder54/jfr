@@ -6,14 +6,17 @@ public class Country {
 
     String id;
     String name;
+    boolean hasRegions;
     ArrayList<Region> regions;
 
     public Country(String identification,
                    String cName,
+                   boolean isRegional,
                    ArrayList<Region> cRegions
                    ) {
         id = identification;
         name = cName;
+        hasRegions = isRegional;
         regions = cRegions;
     }
 
@@ -24,8 +27,13 @@ public class Country {
     public String getName() {
         return name;
     }
-    
-    public ArrayList<Region> getRegions() {
+	
+	public boolean isRegional() {
+		return hasRegions;
+	}
+	
+	public ArrayList<Region> getRegions() {
         return regions;
     }
+    
 }

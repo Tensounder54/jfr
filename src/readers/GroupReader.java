@@ -11,23 +11,7 @@ import java.util.ArrayList;
 
 public class GroupReader {
 
-    public static Group groupReader(String id) throws IOException {
-        ArrayList<String> ids = new ArrayList<>();
-        ArrayList<Country> countries = CountryUtils.getCountryList();
-        for (int i = 0; i < countries.size(); i++) {
-            ids.add(countries.get(i).getId());
-        }
-        if (id.substring(id.length()-1).toUpperCase().equals(id.substring(id.length()-1))
-                && ids.contains(id.substring(id.length()-1))) {
-            return null; //Will go to handel procedure for non-standard groups.
-        }
-        Group group = getGroupCoreInfo(id);
-        addAdminPosts(group);
-        addPosts(group);
-        return group;
-    }
-
-    public static Group getGroupCoreInfo(String id) throws IOException {
+    public static Group groupReader(Region region, String id) throws IOException {
         Document groupPage = Jsoup.connect("https://groups.freecycle.org/group/" 
             + id + "/posts/all").get();
         Document descriptionPage = Jsoup.connect("").get();
@@ -45,7 +29,8 @@ public class GroupReader {
         ArrayList<Post> posts = new ArrayList<Post>();
         return new Group(id, 
                          content.child(0).child(0).text(),
-                         CountryUtils.getCountryFromId(id.substring(id.length()-1)),
+		                 region.getCountry(),
+                         region,
                          description,
                          Integer.parseInt(content.child(7).text().substring(20, content.child(7).text().length()-9)),
                          Integer.parseInt(content.child(0).child(0).text().substring(0, content.child(0).child(0).text().indexOf("M")-1)),

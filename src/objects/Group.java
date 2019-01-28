@@ -7,6 +7,7 @@ public class Group {
     String id;
     String name;
     Country country;
+    Region region;
     String description;
     int postCount;
     int memberCount;
@@ -15,7 +16,8 @@ public class Group {
 
     public Group(String identification, 
                  String gName, 
-                 Country gCountry, 
+                 Country gCountry,
+                 Region gRegion,
                  String gDscription, 
                  int gPostCount, 
                  int gMemberCount, 
@@ -25,6 +27,7 @@ public class Group {
         id = identification;
         name = gName;
         country = gCountry;
+        region = gRegion;
         description = gDscription;
         postCount = gPostCount;
         memberCount = gMemberCount;
@@ -40,10 +43,14 @@ public class Group {
         return name;
     }
 
-    public Country getRegion() {
+    public Country getCountry() {
         return country;
     }
-
+    
+    public Region getRegion() {
+        return region;
+    }
+    
     public String getDescription() {
         return description;
     }

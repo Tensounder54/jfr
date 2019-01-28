@@ -20,18 +20,14 @@ public class CountryUtils {
         for (int i = 0; i < countriesColumns.size(); i++) {
             for (int j = 0; j < countriesColumns.get(i).child(1).children().size(); j++) {
                 Element country = countriesColumns.get(i).child(1).child(j).child(0);
-                boolean hasRegions;
-                if (checkForRegions(country.attr("href").substring(32))) {
-                	ArrayList<Region> regions = new ArrayList<Region>();
-                	countries.add(new Country(country.attr("href").substring(32),
-			                country.text(),
-			                regions));
-                } else {
-                	ArrayList<Group> groups = new ArrayList<Group>();
-	                countries.add(new Country(country.attr("href").substring(32),
-			                country.text(),
-			                groups));
-                }
+                ArrayList<Region> regions = new ArrayList<Region>();
+                /*boolean hasRegions;
+                if (checkForRegions(country.attr("href").substring(32))) { hasRegions = true; }
+                else { hasRegions = false; }*/
+	            countries.add(new Country(country.attr("href").substring(32),
+			            country.text(),
+                        checkForRegions(country.attr("href").substring(32)),
+			            regions));
             }
         }
         return countries;
@@ -48,30 +44,6 @@ public class CountryUtils {
 
     public static String getFlagPath(Country country) {
         return "https://static.freecycle.org/images/flags/" + country.getId() + ".png";
-    }
-
-    public static int getTotalCountries() throws IOException {
-        ArrayList<Country> countries = getCountryList();
-        return countries.size();
-    }
-
-    public static Country getCountryFromId(String id) throws IOException {
-        ArrayList<Country> countries = getCountryList();
-        for (int i = 0; i < countries.size(); i++) {
-            if (countries.get(i).getId() == id) {
-                return countries.get(i);
-            }
-        }
-        return null;
-    }
-
-    public static ArrayList<String> getAllCountryIds() throws IOException {
-        ArrayList<String> ids = new ArrayList<>();
-        ArrayList<Country> countries = getCountryList();
-        for (int i = 0; i < countries.size(); i++) {
-            ids.add(countries.get(i).getId());
-        }
-        return ids;
     }
 
 }
