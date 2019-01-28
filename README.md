@@ -47,7 +47,7 @@ If you want to load the project up I personally recommend using IntelliJ IDEA as
 
 # Contributing #
 
-If you would like to contribute to the project then that's fantasic! We'd love the help. I'd recommend you start by taking a look at the [issue tracker](/issues). If ther is nothing there that you think you can fix then feel free to make a [pull request](/compare) with some changes then feel free. The dev team will take a look at it and see if we want to implement the change.
+If you would like to contribute to the project then that's fantasic! We'd love the help. I'd recommend you start by taking a look at the [issue tracker](../../issues). If ther is nothing there that you think you can fix then feel free to make a [pull request](../../compare) with some changes then feel free. The dev team will take a look at it and see if we want to implement the change.
 
 ----------
 
