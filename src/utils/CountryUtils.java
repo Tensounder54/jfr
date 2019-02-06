@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class CountryUtils {
 
-    public static ArrayList<Object> getCountryList() throws IOException {
+    public static ArrayList<Country> getCountryList() throws IOException {
         ArrayList<Country> countries = new ArrayList<Object>();
         
         Document doc = Jsoup.connect("https://www.freecycle.org/browse?noautodetect=1").get();
