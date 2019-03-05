@@ -1,6 +1,6 @@
 ![jfrlogo_trans.png](https://i.imgur.com/rsgf7Q8.png)
 
-[![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/)[1]  
+[![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png)](http://creativecommons.org/licenses/by-nc-sa/4.0/) [1]  
 
 
 ----------
@@ -14,22 +14,16 @@ The library allows you to traverse pages of [freecycle.org](https://www.freecycl
 
 ----------
 
-# Installing... #
+# Installing #
 
-### ...as Software ###
-
-Currently if you want to run the project the best thing to do is open the project in a Java [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) such as [IntelliJ IDEA](https://www.jetbrains.com/idea/ "IntelliJ IDEA Home Page"), [Eclipse](https://www.eclipse.org/ "Eclipse Home Page"), [NetBeans](https://netbeans.org/ "NetBeans Home Page") or [BlueJ](https://bluej.org/ "BlueJ Home Page").
-
-Once there build the project and run the main method. This will start up the library in a user friendly mode.
-
-### ...as a Library ###
-
-To do this you will need to open the project in a Java IDE and then compile it to a `.jar` file. 
+[Install](https://stackoverflow.com/a/1051705 "How to add external jar's in IntelliJ IDEA.") [Jsoup](https://jsoup.org/) as a jar and then open the project in a Java IDE and then compile it to a `.jar` file. 
 
 - In [IntelliJ IDEA](https://stackoverflow.com/a/1051705 "How to add external jar's in IntelliJ IDEA.").
 - In [Eclipse](http://www.oxfordmathcenter.com/drupal7/node/44#page-title "How to add external jar's in Eclipse.").
 - In [NetBeans](https://community.oracle.com/thread/1206296 "How to add external jar's in NetBeans.").
 - In [BlueJ](https://stackoverflow.com/a/51206621 "How to add external jar's in BlueJ.").
+
+**Please note that there is no released `.jar` file at this time. I will release one soon; when I find the time to do so.**
 
 ----------
 
@@ -47,7 +41,7 @@ If you want to load the project up I personally recommend using IntelliJ IDEA as
 
 # Contributing #
 
-If you would like to contribute to the project then that's fantasic! We'd love the help. I'd recommend you start by taking a look at the [issue tracker](../../issues). If ther is nothing there that you think you can fix then feel free to make a [pull request](../../compare) with some changes then feel free. The dev team will take a look at it and see if we want to implement the change.
+If you would like to contribute to the project then that's fantastic! We'd love the help. I'd recommend you start by taking a look at the [issue tracker](../../issues). If there is nothing there that you think you can fix then please ask for help. We're are always happy to give you pointers. If you've made some changes, feel free to make a [pull request](../../compare), the dev team will take a look at it and see if we want to implement the change.
 
 ----------
 
@@ -61,7 +55,7 @@ If you would like to contribute to the project then that's fantasic! We'd love t
 
 You can find the licence for jfr in the [LICENCE](/LICENSE) file.
 
-The Java Freecycle Reader is licenced and distabuted under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html). [2]
+The Java Freecycle Reader is licensed and distributed under the [GNU Affero General Public License v3.0](https://www.gnu.org/licenses/agpl-3.0.en.html). [2]
 
 ----------
 
