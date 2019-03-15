@@ -19,7 +19,7 @@
 package objects;
 
 /**
- * Class to store info about admin posts.
+ * Class to store info about admin posts made to groups on Freecycle as objects.
  *
  * @author T54 (Tensounder54)
  * @version 1.0.0
@@ -36,12 +36,12 @@ public class AdminPost {
     /**
      * Constructor for AdminPost
      *
-     * @param identification
-     * @param apGroup
-     * @param apTitle
-     * @param apTitleBold
-     * @param apDescription
-     * @return new AdminPost
+     * @param identification The ID of the AdminPost that is being created.
+     * @param apGroup The Group that the AdminPost will belong to.
+     * @param apTitle The tithe of the AdminPost.
+     * @param apTitleBold Whether of not the tile of the AdminPost is bold.
+     * @param apDescription The content of the AdminPost labeled as the description.
+     * @return AdminPost Returns a new AdminPost.
      */
     public AdminPost(int identification,
                      Group apGroup,
@@ -60,7 +60,7 @@ public class AdminPost {
     /**
      * Getter function for variable id.
      *
-     * @return id
+     * @return int id
      */
     public int getId() {
         return id;
@@ -69,7 +69,7 @@ public class AdminPost {
     /**
      * Getter function for variable group.
      *
-     * @return group
+     * @return Group group
      */
     public Group getGroup() {
         return group;
@@ -78,7 +78,7 @@ public class AdminPost {
     /**
      * Getter function for variable type.
      *
-     * @return type
+     * @return String type
      */
     public String getType() {
         return type;
@@ -87,7 +87,7 @@ public class AdminPost {
     /**
      * Getter function for variable title.
      *
-     * @return title
+     * @return String title
      */
     public String getTitle() {
         return title;
@@ -96,7 +96,7 @@ public class AdminPost {
     /**
      * Getter function for variable titleBold.
      *
-     * @return titleBold
+     * @return boolean titleBold
      */
 	public boolean isTitleBold() {
 		return titleBold;
@@ -105,7 +105,7 @@ public class AdminPost {
     /**
      * Getter function for variable description.
      *
-     * @return description
+     * @return String description
      */
 	public String getDescription() {
         return description;

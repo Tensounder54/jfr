@@ -21,7 +21,7 @@ package objects;
 import java.util.ArrayList;
 
 /**
- * Class to store information about freecycle groups.
+ * Class to store information about freecycle groups as objects.
  *
  * @author T54 (Tensounder54)
  * @version 1.0.0
@@ -41,16 +41,16 @@ public class Group {
     /**
      * Constuctor for Group.
      *
-     * @param identification
-     * @param gName
-     * @param gCountry
-     * @param gRegion
-     * @param gDscription
-     * @param gPostCount
-     * @param gMemberCount
-     * @param gAdminPostList
-     * @param gPostList
-     * @return new Group
+     * @param identification The ID of the Group to be created.
+     * @param gName The name of the Group.
+     * @param gCountry The Country that the Group belongs to.
+     * @param gRegion The Region that the Group belongs to.
+     * @param gDscription The description that the moderators of the Group have spesified.
+     * @param gPostCount The total number of posts on the Group.
+     * @param gMemberCount The number of members of the Group.
+     * @param gAdminPostList The ArrayList of AdminPosts that are skied to the group.
+     * @param gPostList The list of posts on the sub.
+     * @return Group Returns a new group.
      */
     public Group(String identification, 
                  String gName, 
@@ -76,7 +76,7 @@ public class Group {
     /**
      * Getter function for variable id.
      *
-     * @return id
+     * @return String id
      */
     public String getId() {
         return id;
@@ -85,7 +85,7 @@ public class Group {
     /**
      * Getter function for variable name.
      *
-     * @return name
+     * @return String name
      */
     public String getName() {
         return name;
@@ -94,7 +94,7 @@ public class Group {
     /**
      * Getter function for variable country.
      *
-     * @return country
+     * @return Country country
      */
     public Country getCountry() {
         return country;
@@ -103,7 +103,7 @@ public class Group {
     /**
      * Getter function for variable region.
      *
-     * @return region
+     * @return Region region
      */
     public Region getRegion() {
         return region;
@@ -112,7 +112,7 @@ public class Group {
     /**
      * Getter function for variable description.
      *
-     * @return description
+     * @return String description
      */
     public String getDescription() {
         return description;
@@ -121,7 +121,7 @@ public class Group {
     /**
      * Getter function for variable postCount.
      *
-     * @return postCount
+     * @return int postCount
      */
     public int getPostCount() {
         return postCount;
@@ -130,7 +130,7 @@ public class Group {
     /**
      * Getter function for variable memberCount.
      *
-     * @return memberCount
+     * @return int memberCount
      */
     public int getMemberCount() {
         return memberCount;
@@ -139,7 +139,7 @@ public class Group {
     /**
      * Getter function for variable adminPostList.
      *
-     * @return adminPostList
+     * @return ArrayList<AdminPost> adminPostList
      */
     public ArrayList<AdminPost> getAdminPostList() {
         return adminPostList;
@@ -148,7 +148,7 @@ public class Group {
     /**
      * Getter function for variable postList.
      *
-     * @return postList
+     * @return ArrayList<Post> postList
      */
     public ArrayList<Post> getPostList() {
         return postList;

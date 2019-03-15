@@ -20,12 +20,25 @@ package objects;
 
 import java.util.ArrayList;
 
+/**
+ * Class to store info about Freecycle regions as objects.
+ *
+ * @author T54 (Tensounder54)
+ * @version 1.0.0
+ */
 public class Region {
 
     Country country;
     String name;
     ArrayList<Group> groups;
 
+    /**
+     *
+     * @param rCountry
+     * @param rName
+     * @param rGroups
+     * @return Region Returns a new Region.
+     */
     public Region(Country rCountry,
                   String rName,
                   ArrayList<Group> rGroups
@@ -35,14 +48,29 @@ public class Region {
         groups = rGroups;
     }
 
+    /**
+     * Getter function for variable country.
+     *
+     * @return Country country
+     */
     public Country getCountry() {
         return country;
     }
 
+    /**
+     * Getter function for variable name.
+     *
+     * @return String name
+     */
     public String getName() {
         return name;
     }
-	
+
+    /**
+     * Getter function for variable groups.
+     *
+     * @return ArrayList<Group> groups
+     */
 	public ArrayList<Group> getGroups() {
 		return groups;
 	}

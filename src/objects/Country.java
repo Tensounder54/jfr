@@ -21,7 +21,7 @@ package objects;
 import java.util.ArrayList;
 
 /**
- * Class to store information about a freecycle country.
+ * Class to store information about a freecycle country as an object.
  *
  * @author T54 (Tensounder54)
  * @version 1.0.0
@@ -36,10 +36,11 @@ public class Country {
     /**
      * Constuctor for country class.
      *
-     * @param identification
-     * @param cName
-     * @param isRegional
-     * @param cRegions
+     * @param identification The ID of the Country.
+     * @param cName The name of the Country.
+     * @param isRegional Whether or not the country has Regions.
+     * @param cRegions The ArrayList that stores the list of Regions. Only contains on if isRegonal/hasRegions is false.
+     * @return Country Returns a new Country.
      */
     public Country(String identification,
                    String cName,
@@ -55,7 +56,7 @@ public class Country {
     /**
      * Getter function for the id variable.
      *
-     * @return id
+     * @return String id
      */
     public String getId() {
         return id;
@@ -64,7 +65,7 @@ public class Country {
     /**
      * Getter function for the name variable.
      *
-     * @return name
+     * @return String name
      */
     public String getName() {
         return name;
@@ -73,7 +74,7 @@ public class Country {
     /**
      * Getter function for the hasRegions variable.
      *
-     * @return hasRegions
+     * @return boolean hasRegions
      */
 	public boolean isRegional() {
 		return hasRegions;
@@ -82,7 +83,7 @@ public class Country {
     /**
      * Getter function for the regions variable.
      *
-     * @return regions
+     * @return ArrayList<Region> regions
      */
 	public ArrayList<Region> getRegions() {
         return regions;
