@@ -27,10 +27,22 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import java.io.IOException;
 
+/**
+ * Class to retreve the list of Groups from the passed Region.
+ *
+ * @author T54 (Tensounder54)
+ * @version 1.0.0
+ */
 public class GroupUtils {
-	
+
+	/**
+	 * Function to get the list of Groups from the passed Region.
+	 *
+	 * @param region The Region that the function is to get the groups for.
+	 * @throws IOException Throws an IOExeption when it cannot access the Groups list page for the passed Region.
+	 */
 	public static void getGroups(Region region) throws IOException {
-		Document doc = Jsoup.connect().get();
+		Document doc = Jsoup.connect("https://www.freecycle.org/browse/" + region.getCountry + "/" + region.getName()).get();
 		Element activeGroups = doc.getElementById("active_groups");
 		Elements groupsCollumns = activeGroups.children();
 		groupsCollumns.remove(groupsCollumns.size());

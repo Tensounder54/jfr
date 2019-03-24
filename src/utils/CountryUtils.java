@@ -26,11 +26,22 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Class to handel the retreval and reading of the country list page.
+ *
+ * @author T54 (Tensounder54)
+ * @version 1.0.0
+ */
 public class CountryUtils {
 
+    /**
+     * Function access the country list page and reads it to convert each listed Country to a Country.
+     *
+     * @return List of Countrys.
+     * @throws IOException Throws an IOExeption when it cannot access the Country list page.
+     */
     public static ArrayList<Country> getCountryList() throws IOException {
         ArrayList<Country> countries = new ArrayList<Object>();
-        
         Document doc = Jsoup.connect("https://www.freecycle.org/browse?noautodetect=1").get();
         Element fullCountriesList = doc.getElementById("active_country_list");
         Elements countriesColumns = fullCountriesList.children();
@@ -51,15 +62,27 @@ public class CountryUtils {
         return countries;
     }
 
+    /**
+     * Function to check to see if a Country has regions.
+     *
+     * @param id The Id of the Country to check.
+     * @return True if the Country has Regions otherwise False.
+     * @throws IOException Throws an IOExeption when it cannot access the Country page.
+     */
     public static boolean checkForRegions(String id) throws IOException {
         Document doc = Jsoup.connect("https://www.freecycle.org/browse/" + id).get();
         Element contentElement = doc.getElementById("content");
         if (contentElement.child(0).attr("id") == "active_region_list") {
             return true;
-        }
-        return false;
+        } else return false;
     }
 
+    /**
+     * Function returns the URL path to the passed Country's Freecycle flag.
+     *
+     * @param country
+     * @return
+     */
     public static String getFlagPath(Country country) {
         return "https://static.freecycle.org/images/flags/" + country.getId() + ".png";
     }

@@ -27,8 +27,21 @@ import org.jsoup.select.Elements;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Class to handel the retreval of the Regions list for a passed Country.
+ *
+ * @author T54 (Tensounder54)
+ * @version 1.0.0
+ */
 public class RegionsUtils {
 
+    /**
+     * Function to get the Regions list for the passed Country.
+     *
+     * @param country The Country to retreve the Regions for. Used to get the page that lists the Regions for this Country.
+     * @return ArrayList<Region> that contail the Regons for the given Country.
+     * @throws IOException Throws an IOExeption when it cannot access the Region list page for the passed Country.
+     */
     public static ArrayList<Region> getRegionsForCountry(Country country) throws IOException {
         ArrayList<Region> regions = new ArrayList<>();
         Document doc = Jsoup.connect("https://www.freecycle.org/browse/" + country.getId() + "/" + country.getName()).get();
@@ -38,13 +51,11 @@ public class RegionsUtils {
         if (country.isRegional()) {
             for (int i = 0; i < regionsColumns.size(); i++) {
                 for (int j = 0; j < regionsColumns.get(i).child(1).children().size(); j++) {
-	                Element region = regionsColumns.get(i).child(1).child(j).child(0);
+                    Element region = regionsColumns.get(i).child(1).child(j).child(0);
                     country.regions.add(new Region(country, region.text(), new ArrayList<Group>));
                 }
             }
-        } else {
-            country.regions.add(new Region(country, country.getId() + "NullRegion", new ArrayList<Group>));
-        }
+        } else country.regions.add(new Region(country, country.getId() + "NullRegion", new ArrayList<Group>));
         return regions;
     }
     

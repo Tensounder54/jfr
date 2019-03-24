@@ -25,17 +25,26 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import java.io.IOException;
 
+/**
+ * Class to read admin posts. Contains one class to handel reading.
+ *
+ * @author T54 (Tensounder54)
+ * @version 1.0.0
+ */
 public class AdminPostReader {
-    
+
+    /**
+     * Function gets reads AdminPosts based off passed paramiters.
+     *
+     * @param id The id of the post that is to be read. Used to ge the page for the AdminPost to be read.
+     * @param group The group that the post belongs to. Used to ge the page for the AdminPost to be read.
+     * @return AdminPost Returns new AdminPost.
+     * @throws IOExceptionThrows an IOExeption when it cannot access the page to retreve the AdminPost.
+     */
     public static AdminPost adminPostReader(int id, Group group) throws IOException {
         Document doc = Jsoup.connect("https://groups.freecycle.org/group/" + group + "/admin/" + id).get();
         Element groupBox = doc.getElementById("group_box");
-        boolean titleBold;
-        if (groupBox.child(3).tag().getName() == "h1") {
-            titleBold = true;
-        } else {
-            titleBold = false;
-        }
+        boolean titleBold = groupBox.child(3).tag().getName() == "h1";
         return new AdminPost(id, group, groupBox.child(3).text(), titleBold, groupBox.child(4).html());
     }
 

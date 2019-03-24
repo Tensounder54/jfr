@@ -25,8 +25,22 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import java.io.IOException;
 
+/**
+ * Class to handel the retraval and reading of Posts.
+ *
+ * @author T54 (Tensounder54)
+ * @version 1.0.0
+ */
 public class PostReader {
 
+    /**
+     * Function to retreve posts based of the id and the Group of the Post that is passed into the function.
+     *
+     * @param id The id of the Post that is to be read. Used to get the page for the Post.
+     * @param group The Group that the post belongs. Used to get the page for the Post.
+     * @return Post Returns a new post.
+     * @throws IOException Throws an IOExeption when it cannot access the page to retreve the Post.
+     */
     public static Post PostReader(int id, Group group) throws IOException {
         Document doc = Jsoup.connect("https://groups.freecycle.org/group/" 
             + group + "/posts/" + String.valueOf(id) + "/").get();

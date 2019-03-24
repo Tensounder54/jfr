@@ -27,8 +27,23 @@ import org.jsoup.nodes.Element;
 import java.io.IOException;
 import java.util.ArrayList;
 
+/**
+ * Class to handel reading of Groups and retreaval of Posts and AdminPosts.
+ *
+ * @author T54 (Tensounder54)
+ * @version 1.0.0
+ */
 public class GroupReader {
 
+    /**
+     * Function to retreave the Group page and then read it to get information from it.
+     *
+     * @param region The Region that the Group belongs to.
+     *               Used to get the Groups Country in order to create a new Group.
+     * @param id The id of the group to be read. Used to get the page for the Group.
+     * @return Group Returns a new group.
+     * @throws IOException Throws an IOExeption when it cannot access the page to retreve the Group.
+     */
     public static Group groupReader(Region region, String id) throws IOException {
         Document groupPage = Jsoup.connect("https://groups.freecycle.org/group/" 
             + id + "/posts/all").get();
@@ -57,6 +72,12 @@ public class GroupReader {
                          );
     }
 
+    /**
+     * Adds the AdminPosts to the spesified Group.
+     *
+     * @param group The group that the AdminPosts are to be added to.
+     * @throws IOException Throws an IOExeption when it cannot access the page to retreve the Group.
+     */
     public static void addAdminPosts(Group group) throws IOException {
         Document groupPage = Jsoup.connect("https://groups.freecycle.org/group/"
                 + group.getId() + "/posts/all").get();
@@ -74,6 +95,12 @@ public class GroupReader {
         }
     }
 
+    /**
+     * Adds the Posts to the spesified Group.
+     *
+     * @param group The group that the Posts are to be added to.
+     * @throws IOException Throws an IOExeption when it cannot access the page to retreve the Group.
+     */
     public static void addPosts(Group group) throws IOException {
         int postCount = group.getPostCount();
         int pageCount = Integer.parseInt(String.valueOf(postCount / 100).split(".")[0]);
@@ -94,12 +121,12 @@ public class GroupReader {
         }
     }
 
-    private static boolean ensureStandardGroupId(String id) {
+    /* private static boolean ensureStandardGroupId(String id) {
     	Boolean isValidId = false;
     	
     	return isValidId;
     }
     
-    //private static void nonStandardGroups(String id) {}
+    private static void nonStandardGroups(String id) {} */
 
 }
